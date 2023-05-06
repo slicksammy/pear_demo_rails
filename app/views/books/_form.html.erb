@@ -1,0 +1,44 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <div style="display: flex; flex-direction: column;">
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, style: "border-radius:4px;margin-bottom:10px;padding:5px" %>
+  </div>
+
+  <div>
+    <%= form.label :author %>
+    <%= form.text_field :author, style: "border-radius:4px;margin-bottom:10px;padding:5px" %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, style: "border-radius:4px;margin-bottom:10px;padding:5px" %>
+  </div>
+
+  <div>
+    <%= form.label :publication_date %>
+    <%= form.date_select :publication_date %>
+  </div>
+
+  <div>
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn, style: "border-radius:4px;margin-bottom:10px;padding:5px" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  </div>
+<% end %>
