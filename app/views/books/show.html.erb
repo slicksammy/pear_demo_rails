@@ -1,29 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice" class="alert alert-info"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+  <h1><%= @book.title %></h1>
+  <h3>by <%= @book.author %></h3>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+  <p><strong>Description:</strong><br><%= @book.description %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
+  <p><strong>Publication date:</strong><br><%= @book.publication_date %></p>
 
-<p>
-  <strong>Publication date:</strong>
-  <%= @book.publication_date %>
-</p>
+  <p><strong>ISBN:</strong><br><%= @book.isbn %></p>
 
-<p>
-  <strong>ISBN:</strong>
-  <%= @book.isbn %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <div class="btn-group" role="group" aria-label="Actions">
+    <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-outline-primary' %> 
+    <%= link_to 'Back', books_path, class: 'btn btn-outline-secondary' %>
+  </div>
+</div>
