@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  include PermissionsCheck
 
   def index
     @books = Book.all
@@ -9,13 +11,16 @@ class BooksController < ApplicationController
   end
 
   def new
+    check_permissions(2)
     @book = Book.new
   end
 
   def edit
+    check_permissions(2)
   end
 
   def create
+    check_permissions(2)
     @book = Book.new(book_params)
 
     if @book.save
@@ -26,6 +31,7 @@ class BooksController < ApplicationController
   end
 
   def update
+    check_permissions(2)
     if @book.update(book_params)
       redirect_to @book, notice: 'Book was successfully updated.'
     else
@@ -34,6 +40,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    check_permissions(2)
     @book.destroy
     redirect_to books_url, notice: 'Book was successfully destroyed.'
   end

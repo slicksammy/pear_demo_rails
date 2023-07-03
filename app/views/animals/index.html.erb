@@ -1,0 +1,26 @@
+<h1>Animals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.name %></td>
+        <td><%= animal.species %></td>
+        <td><%= animal.age %></td>
+        <td><%= animal_species_icon(animal.species) %></td>
+        <td><%= link_to 'Roar', make_move_path(name: animal.name, action: 'roar'), method: :post, class: 'btn btn-primary', remote: true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Animal', new_animal_path %>

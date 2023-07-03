@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(200, 10px);
+  grid-template-rows: repeat(200, 10px);
+}
+
+.cell {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.snake {
+  background-color: black;
+}

@@ -1,0 +1,22 @@
+<h1>Your Credit Cards</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Card Number</th>
+      <th>Expiration Date</th>
+      <th>CVC Code</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @credit_cards.each do |credit_card| %>
+      <tr>
+        <td><%= credit_card.card_number %></td>
+        <td><%= credit_card.expiration_date %></td>
+        <td><%= credit_card.cvc_code %></td>
+        <td><%= number_to_currency(credit_card.balance) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

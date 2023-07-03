@@ -1,0 +1,6 @@
+---
+version: 1.0
+project_settings:
+  context: Ruby on rails application. Using postgres.
+auth:
+  api_key: gnkxoZJ0r5X2klKQS5ir

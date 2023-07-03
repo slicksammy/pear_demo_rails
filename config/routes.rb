@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :books
-  root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'snake/index'
+  get 'game/play', to: 'game#play'
+  root 'snake#index'
+  resources :credit_cards
 end
